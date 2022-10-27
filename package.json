@@ -1,0 +1,9 @@
+{
+  "name": "lukas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lukas0306/httpServerWithHttpModule.git",
+  "author": "lukas0306 <lanosh195@gmail.com>",
+  "license": "MIT",
+  "type": "module"
+}

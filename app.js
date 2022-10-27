@@ -63,6 +63,27 @@ const httpRequestListener = (req, res) => {
       res.writeHead(201, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({ message: 'userCreated' }))
     }
+  }else if (url === '/posts') {
+    if (method === 'POST') {
+      let body = ''
+
+      req.on('data', (signupData) => {
+        body += signupData
+      })
+
+      req.on('end', () => {
+        const post = JSON.parse(body)
+
+        posts.push({
+          id: post.id,
+          title: post.title,
+          content: post.content,
+          userId: post.userId
+        })
+      })
+      res.writeHead(201, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ message: 'postCreated' }))
+    }
   }
 }
 
